@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    max-width: 100%;
+    margin: 0 auto; 
+}
+
+.style-main-block {
+    background: linear-gradient(125deg, #1a1a1a 0%, #2a2a2a 100%);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid #333;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+body {
+    background-color: #191919;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.menu-block {
+    height: 100vh;
+    width: 260px;
+    border-right: 1px solid #353535;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    background-color: #191919;
+    z-index: 1000;
+}
+
+.main-barside {
+    height: 57px;
+    color: #ffffff;
+    font-size: 57px;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 60px;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.button-stat, .button-team, .button-servers, .button-tournament {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.textbutton {
+    text-decoration: none;
+    width: 220px;
+}
+
+.menu-button {
+    height: 46px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    color: rgb(167, 167, 167);
+    padding: 0 20px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+.menu-button:hover {
+    background-color: #222222;
+    color: #ffffff;
+}
+
+.menu-button.active {
+    background-color: #4CAF50;
+    color: #ffffff;
+}
+
+.main-block {
+    margin-left: 260px;
+    padding: 20px;
+    min-height: 100vh;
+    background-color: #191919;
+}
