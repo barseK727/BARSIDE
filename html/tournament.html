@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/tournament.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+    <div class="menu-block">
+        <a class="main-barside" href="/index.html">BARSIDE</a>
+        <div class="button-team">
+            <a class="textbutton" href="/html/command.html">
+                <p class="menu-button">Команда</p>
+            </a>
+        </div>
+        <div class="button-servers">
+            <a class="textbutton" href="/html/servers.html">
+                <p class="menu-button">Сервера</p>
+            </a>
+        </div>
+        <div class="button-tournament">
+            <a class="textbutton" href="html/tournament.html">
+                <p class="menu-button active">Турниры</p>
+            </a>
+        </div>
+    </div>
+	<div class="main-block">
+		<main>
+            <div class="main-container">
+                <div class="style-main-block">
+                    <div class="block-info">
+                        <h1 class="headline-tournaments">ТУРНИРЫ</h1>
+                        <p class="description-of-the-tournaments-page">
+                            Здесь проходят турниры по CS2. Вы можете как зарегистрироваться на турнир, так и создать свой.
+                        </p>
+                    </div>
+                    <div class="menu-button-tournament">
+                        <button id="open-modal">+ Создать турнир</button>
+                    </div> 
+                    <div class="modal" id="my-modal">
+                        <div class="modal-box">
+                            <button class="model-close" id="close-my-modal">
+                                <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.09082 0.03125L22.9999 22.0294L20.909 24.2292L-8.73579e-05 2.23106L2.09082 0.03125Z"
+                                    fill="#333333" />
+                                    <path d="M0 22.0295L20.9091 0.0314368L23 2.23125L2.09091 24.2294L0 22.0295Z" fill="#333333" />
+                                </svg>
+                            </button>
+                            <section class="form">
+                                <div class="form-inner">
+                                <img src="assets/images/auto_end.png" alt="">
+                                    <form id="form">
+                                        <h2>Нужна консультация?</h2>
+                                        <p>Наш менеджер поможет решить ваш вопрос!
+                                            Оставьте ваши контактные данные,
+                                            мы свяжемся с вами в течение 15 минут в 
+                                            рабочее время</p>
+                                        <input type="text" id="name" name="name" placeholder="Имя" 
+                                        required>
+                                        <input type="number" id="phone" name="phone" 
+                                        placeholder="Номер телефона" required>
+                                        <button type="submit">Отправить</button>
+                                        <p class="succes disp">Сообщение доставленно</p>
+                                    </form>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+	</div>
+    <script src="/js/order.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer src="/js/index.js"></script>
+</body>
+</html>
+<!-- Описание страницы турнира -->
+<!-- кнопка создания турниров -->
+    <!-- Бланк для заполнения информации по турниру -->
+    <!-- информация отправляется в бота по телеграмму -->
+<!-- Турниры -->
+    <!-- Список турниров -->
+        <!-- Информация о турнирах -->
+        <!-- Кнопка для регистрации -->
+        <!-- Отправляет информацию в телеграм бота -->
