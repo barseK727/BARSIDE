@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/tournament.css">
+    <link rel="stylesheet" class="link-modal" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body class="body-tournament">
+    <div class="menu-block">
+		<a class="main-barside" href="/index.html">BARSIDE</a>
+		<div class="button-team">
+			<a class="textbutton" href="/html/command.html">
+				<p class="menu-button">Команда</p>
+			</a>
+		</div>
+		<div class="button-servers">
+			<a class="textbutton" href="/html/servers.html">
+				<p class="menu-button">Сервера</p>
+			</a>
+		</div>
+		<div class="button-tournament">
+            <a class="textbutton" href="/html/tournament.html">
+                <p class="menu-button active">Турниры</p>
+            </a>
+        </div>
+	</div>
+	<div class="main-block">
+		<main>
+            <div class="main-container">
+                <div class="style-main-block">
+                    <div class="block-info">
+                        <h1 class="headline-tournaments">ТУРНИРЫ</h1>
+                        <p class="description-tournaments-page">
+                            Здесь проходят турниры по CS2. Вы можете как зарегистрироваться 
+                            на турнир, так и создать свой.
+                        </p>
+                    </div>
+                    <div class="menu-tournament-create">
+                        <p class="info-create-tournamet-button"></p>
+                        <button id="open-modal" class="button-create-tournament">+ Создать турнир</button>
+                    </div> 
+                    <div class="modal" id="my-modal">
+                        <div class="modal-box">
+                            <button class="model-close" id="close-my-modal">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" 
+                                    fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 
+                                    0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 
+                                    5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                                </svg>
+                            </button>
+                            <form id="form">
+                                <div class="block-heading-info-creat-tourmnament">
+                                    <h1 class="heading-info-creat-tourmnament">Заполните анкету и создайте турнир</h2>
+                                </div>
+                                <p class="info-creat-tourmnament">Хотите создать турнир? 
+                                Оставть нам заявку со своими данными и мы свяжемся с вами.</p>
+                                <div class="block-input">
+                                    <input type="text" name="name" placeholder="Имя"
+                                     required class="input-name">
+                                </div>
+                                <div class="block-input">
+                                    <input type="number" name="phone"
+                                    placeholder="Номер телефона" required class="input-phone">
+                                </div>
+                                <div class="block-input">
+                                    <input type="text" name="telegram" 
+                                    placeholder="Телеграм" required class="input-telegram">
+                                </div>
+                                <div class="modal-advertisement">
+                                    <a href="https://t.me/bar_sekadmin" target="blank" class="a-img-barsekadmin">
+                                        <img src="/img/advertisement/barsekadmin.jpg" 
+                                        alt="barsekadmin-advertisement" class="barsekadmin-advertisement">
+                                    </a>
+                                    <p class="text-barsekadmin">А ведь здесь могла быть ваша реклама :)</p>
+                                    <a href="https://t.me/bar_sekadmin" target="blank" class="style-button-url-advertisement">
+                                        <p class="button-url-advertisement">Реклама</p>
+                                    </a>
+                                </div>
+                                <button type="submit" class="button-send-tournament">Отправить</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="succes disp" id="message-delivered">Сообщение доставленно</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+	</div>
+    <script src="/js/order.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer src="/js/index.js"></script>
+</body>
+</html>
+<!-- Описание страницы турнира -->
+<!-- кнопка создания турниров -->
+    <!-- Бланк для заполнения информации по турниру -->
+    <!-- информация отправляется в бота по телеграмму -->
+<!-- Турниры -->
+    <!-- Список турниров -->
+        <!-- Информация о турнирах -->
+        <!-- Кнопка для регистрации -->
+        <!-- Отправляет информацию в телеграм бота -->
