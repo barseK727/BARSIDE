@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Серверы CS2</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="header" id="header"></div>
+    <main class="main-content">
+        <div style="margin-bottom: 30px;">
+            <h1 style="color: var(--main); font-size: 2.5rem;"><i class="fas fa-server"></i> Игровые серверы</h1>
+            <p style="color: var(--text-secondary); margin-top: 10px;">Выберите сервер для игры в CS2</p>
+        </div>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-mode="all">Все</button>
+            <button class="filter-btn" data-mode="dm">DM</button>
+            <button class="filter-btn" data-mode="5x5">5x5</button>
+            <button class="filter-btn" data-mode="2x2">2x2</button>
+            <button class="filter-btn" data-mode="bhop">BHOP</button>
+        </div>
+
+        <div class="servers-grid" id="serversGrid"></div>
+    </main>
+    <div id="footer"></div>
+
+    <div class="modal" id="serverModal">
+        <div class="modal-box" style="max-width: 500px;">
+            <button class="model-close" id="closeServerModal">✕</button>
+            <h2 id="modalServerName" style="color: var(--main); margin-bottom: 15px;"></h2>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                <span id="modalServerStatus"></span>
+                <span><i class="fas fa-users"></i> <span id="modalServerPlayers"></span></span>
+            </div>
+            <div style="background: var(--bg-hover); padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Адрес:</strong> <span id="modalServerIp"></span></p>
+                <p><i class="fas fa-map"></i> <strong>Карта:</strong> <span id="modalServerMap"></span></p>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <h3><i class="fas fa-users"></i> Игроки онлайн:</h3>
+                <div id="modalPlayersList" style="background: var(--bg-hover); border-radius: 8px; padding: 10px; margin-top: 10px; max-height: 200px; overflow-y: auto;"></div>
+            </div>
+            <button onclick="connectFromModal()" style="width: 100%; background: linear-gradient(135deg, var(--main), var(--main-dark)); color: white; border: none; padding: 14px; border-radius: 8px; cursor: pointer; font-size: 18px; font-weight: bold; margin-bottom: 10px;">
+                <i class="fas fa-plug"></i> Подключиться
+            </button>
+            <div style="text-align: center;">
+                <button onclick="copyFromModal()" style="background: none; border: 1px solid var(--border-color); color: var(--text-secondary); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px;">
+                    <i class="fas fa-copy"></i> Скопировать IP
+                </button>
+                <p style="margin-top: 8px; font-size: 11px; color: var(--text-muted);"><code id="connectCommand" style="background: var(--bg-card); padding: 2px 6px; border-radius: 4px;"></code></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/script.js"></script>
+    <script src="/js/server.js"></script>
+</body>
+</html>

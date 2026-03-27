@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="header" id="header"></div>
+    <main class="main-content">
+        <h1 style="font-size: 3rem; color: var(--main); border-bottom: 3px solid var(--main); padding-bottom: 10px; display: inline-block; margin-bottom: 30px;">
+            <i class="fas fa-trophy"></i> ТУРНИРЫ
+        </h1>
+        <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 30px; max-width: 800px;">
+            Здесь проходят турниры по CS2. Призовой фонд, рейтинговые игры, возможность выиграть реальные призы.
+        </p>
+
+        <div class="create-tournament-container">
+            <button class="btn-create-tournament" id="open-modal">
+                <i class="fas fa-plus-circle"></i> Создать турнир
+            </button>
+        </div>
+
+        <div class="modal" id="my-modal">
+            <div class="modal-box create-tournament-modal-box">
+                <button class="model-close" id="close-my-modal">✕</button>
+                <form id="form">
+                    <div class="block-heading-info-creat-tourmnament">
+                        <h1 class="heading-info-creat-tourmnament">Заполните анкету и создайте турнир</h1>
+                    </div>
+                    <p class="info-creat-tourmnament">Заполните параметры турнира, и мы свяжемся с вами для подтверждения.</p>
+
+                    <div class="form-group">
+                        <label for="create-tournament-name">Название турнира *</label>
+                        <input id="create-tournament-name" name="tournament_name" type="text" class="form-input" placeholder="Например: BARSIDE SPRING CUP" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="create-prize-fund">Призовой фонд *</label>
+                            <input id="create-prize-fund" name="prize_fund" type="text" class="form-input" placeholder="Например: 50000₽" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="create-players-count">Количество игроков *</label>
+                            <input id="create-players-count" name="players_count" type="number" min="2" class="form-input" placeholder="Например: 10" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="create-date">Дата проведения *</label>
+                        <input id="create-date" name="tournament_date" type="datetime-local" class="form-input" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="create-telegram">Telegram для связи *</label>
+                            <input id="create-telegram" name="telegram" type="text" class="form-input" placeholder="@nickname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="create-phone">Номер телефона *</label>
+                            <input id="create-phone" name="phone" type="tel" class="form-input" placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="create-additional-info">Дополнительная информация</label>
+                        <textarea id="create-additional-info" name="additional_info" class="form-input create-tournament-textarea" rows="4" placeholder="Формат, правила, требования к участникам и т.д."></textarea>
+                    </div>
+
+                    <button type="submit" class="button-send-tournament">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+
+        <div><p class="succes disp" id="message-delivered">Сообщение доставлено</p></div>
+
+        <div class="cards-grid" id="tournamentsGrid">
+            <div class="card">
+                <div class="card-header"><div class="card-icon">B</div><div><h3 class="card-title">BARSIDE CUP #1</h3><span class="card-prize"><i class="fas fa-trophy"></i> 50000₽</span></div></div>
+                <div class="card-details"><div class="detail-item"><i class="fas fa-users"></i> 5x5</div><div class="detail-item"><i class="fas fa-user-friends"></i> 12/16</div></div>
+                <div class="card-footer"><span class="card-date"><i class="far fa-calendar"></i> 04.03.2026, 23:27:11</span><span class="status-badge status-open">Открыт</span></div>
+            </div>
+            <div class="card">
+                <div class="card-header"><div class="card-icon">O</div><div><h3 class="card-title">OPEN CUP</h3><span class="card-prize"><i class="fas fa-trophy"></i> 25000₽</span></div></div>
+                <div class="card-details"><div class="detail-item"><i class="fas fa-users"></i> 5x5</div><div class="detail-item"><i class="fas fa-user-friends"></i> 8/16</div></div>
+                <div class="card-footer"><span class="card-date"><i class="far fa-calendar"></i> 05.03.2026, 20:00:00</span><span class="status-badge status-open">Открыт</span></div>
+            </div>
+            <div class="card">
+                <div class="card-header"><div class="card-icon">W</div><div><h3 class="card-title">WEEKEND BATTLE</h3><span class="card-prize"><i class="fas fa-trophy"></i> 10000₽</span></div></div>
+                <div class="card-details"><div class="detail-item"><i class="fas fa-users"></i> 2x2</div><div class="detail-item"><i class="fas fa-user-friends"></i> 10/16</div></div>
+                <div class="card-footer"><span class="card-date"><i class="far fa-calendar"></i> 06.03.2026, 18:00:00</span><span class="status-badge status-open">Открыт</span></div>
+            </div>
+        </div>
+
+        <div class="modal" id="tournament-modal">
+            <div class="modal-box tournament-modal-box">
+                <button class="model-close" id="close-tournament-modal">✕</button>
+                <div class="tournament-header">
+                    <h2 id="tournament-name" class="tournament-title"></h2>
+                    <span id="tournament-status" class="status-badge"></span>
+                </div>
+                <div class="tournament-prize" id="tournament-prize"></div>
+                <div class="tournament-info-grid">
+                    <div class="info-item" id="tournament-format"></div>
+                    <div class="info-item" id="tournament-participants"></div>
+                    <div class="info-item" id="tournament-date"></div>
+                </div>
+                <div class="tournament-section"><h3><i class="fas fa-file-lines"></i> Описание турнира</h3><p id="tournament-description"></p></div>
+                <div class="tournament-section"><h3><i class="fas fa-list-check"></i> Правила</h3><pre id="tournament-rules"></pre></div>
+                <div class="tournament-section"><h3><i class="fas fa-calendar-days"></i> Расписание</h3><pre id="tournament-schedule"></pre></div>
+                <div class="tournament-actions"><button class="btn-register" id="register-tournament-btn"><i class="fas fa-check-circle"></i> Зарегистрировать команду</button></div>
+            </div>
+        </div>
+
+        <div class="modal" id="registration-modal">
+            <div class="modal-box registration-modal-box">
+                <button class="model-close" id="close-registration-modal">✕</button>
+                <button class="back-button" id="back-to-tournament"><i class="fas fa-arrow-left"></i> Назад к турниру</button>
+                <h2 class="registration-title">Регистрация на турнир</h2>
+                <p class="registration-subtitle">Заполните форму для участия в турнире</p>
+                <form id="registration-form">
+                    <div class="form-group"><label>Название команды *</label><input type="text" id="team-name" class="form-input" placeholder="Введите название команды" required></div>
+                    <div class="form-group"><label>Тренер (не обязательно)</label><input type="text" id="coach-name" class="form-input" placeholder="Никнейм тренера"></div>
+                    <div class="form-group">
+                        <label>Состав команды (5 игроков) *</label>
+                        <div id="players-container">
+                            <div class="player-item">
+                                <div class="player-header">
+                                    <span class="player-number">Игрок 1</span>
+                                    <span class="captain-badge">Капитан</span>
+                                </div>
+                                <div class="player-fields">
+                                    <input type="text" class="player-nickname" placeholder="Никнейм капитана" required>
+                                </div>
+                            </div>
+                            <div class="player-item">
+                                <div class="player-header"><span class="player-number">Игрок 2</span></div>
+                                <div class="player-fields"><input type="text" class="player-nickname" placeholder="Никнейм игрока 2" required></div>
+                            </div>
+                            <div class="player-item">
+                                <div class="player-header"><span class="player-number">Игрок 3</span></div>
+                                <div class="player-fields"><input type="text" class="player-nickname" placeholder="Никнейм игрока 3" required></div>
+                            </div>
+                            <div class="player-item">
+                                <div class="player-header"><span class="player-number">Игрок 4</span></div>
+                                <div class="player-fields"><input type="text" class="player-nickname" placeholder="Никнейм игрока 4" required></div>
+                            </div>
+                            <div class="player-item">
+                                <div class="player-header"><span class="player-number">Игрок 5</span></div>
+                                <div class="player-fields"><input type="text" class="player-nickname" placeholder="Никнейм игрока 5" required></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Контактные данные капитана *</label>
+                        <input type="text" id="captain-telegram" class="form-input" placeholder="Telegram капитана" required>
+                        <input type="tel" id="captain-phone" class="form-input" placeholder="Телефон капитана" required style="margin-top: 10px;">
+                    </div>
+                    <button type="submit" class="btn-submit-registration"><i class="fas fa-paper-plane"></i> Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+    <script src="/js/script.js"></script>
+</body>
+</html>
